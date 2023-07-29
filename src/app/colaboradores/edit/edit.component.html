@@ -1,0 +1,228 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h4 class="text-light">Editar colaborador</h4>
+    <a
+      href="#"
+      routerLink="/colaboradores/index"
+      class="btn btn-secondary text-decoration-none"
+      ><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</a
+    >
+  </div>
+
+  <hr />
+
+  <form
+    *ngIf="colaborador"
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+    class="shadow-sm bg-white rounded d-flex flex-column p-5"
+  >
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Nombre:</label>
+        <input
+          formControlName="name"
+          [(ngModel)]="colaborador.name"
+          id="name"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.name.touched && f.name.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.name.errors.required">*Nombre requerido.</div>
+          <div *ngIf="f.name.errors.pattern">
+            *El nombre solo debe contener letras.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Apellido Paterno:</label>
+        <input
+          formControlName="lastNameP"
+          [(ngModel)]="colaborador.lastNameP"
+          id="lastNameP"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.lastNameP.touched && f.lastNameP.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.lastNameP.errors.required">
+            *Apellido Paterno requerido.
+          </div>
+          <div *ngIf="f.lastNameP.errors.pattern">
+            *El Apellido solo debe contener letras.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Apellido Materno:</label>
+        <input
+          formControlName="lastNameM"
+          [(ngModel)]="colaborador.lastNameM"
+          id="lastNameM"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.lastNameM.touched && f.lastNameM.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.lastNameM.errors.required">
+            *Apellido Paterno requerido.
+          </div>
+          <div *ngIf="f.lastNameM.errors.pattern">
+            *El Apellido solo debe contener letras.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Empresa:</label>
+        <input
+          formControlName="company"
+          [(ngModel)]="colaborador.company"
+          id="company"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.company.touched && f.company.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.company.errors.required">
+            *Nombre de Empresa requerido.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Area:</label>
+        <input
+          formControlName="area"
+          [(ngModel)]="colaborador.area"
+          id="area"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.area.touched && f.area.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.area.errors.required">
+            *Nombre de Empresa requerido.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Departamento:</label>
+        <input
+          formControlName="department"
+          [(ngModel)]="colaborador.department"
+          id="department"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.department.touched && f.department.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.department.errors.required">
+            *Nombre de Departamento requerido.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Puesto:</label>
+        <input
+          formControlName="position"
+          [(ngModel)]="colaborador.position"
+          id="position"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.position.touched && f.position.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.position.errors.required">
+            *Nombre de Puesto requerido.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">Fecha de alta:</label>
+        <input
+          formControlName="dischargeDate"
+          [(ngModel)]="colaborador.dischargeDate"
+          id="dischargeDate"
+          type="date"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.dischargeDate.touched && f.dischargeDate.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.dischargeDate.errors.required">
+            *Fecha de alta requerida.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group container">
+      <div class="col-lg-6 col-md-8 col-sm-12 mx-auto mb-4">
+        <label for="title">status:</label>
+        <input
+          formControlName="status"
+          [(ngModel)]="colaborador.status"
+          id="status"
+          type="text"
+          class="form-control"
+        />
+        <div
+          *ngIf="f.status.touched && f.status.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.status.errors.required">*status requerido.</div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="alert alert-danger col-6 mx-auto"
+      *ngIf="alert_error"
+      role="alert"
+    >
+      Ocurrio un error al realizar la actualización!!
+    </div>
+    <button
+      class="btn btn-primary col-lg-2 col-md-6 mx-auto"
+      type="submit"
+      [disabled]="!form.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

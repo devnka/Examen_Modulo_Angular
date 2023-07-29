@@ -1,0 +1,76 @@
+<section>
+  <div class="d-flex justify-content-between row">
+    <div class="col-lg-6 col-md-12">
+      <h4 class="text-light">Lista colaboradores</h4>
+    </div>
+    <div class="col-lg-6 col-md-12 text-lg-end text-md-start">
+      <a
+        routerLink="/colaboradores/crear"
+        class="btn btn-secondary text-decoration-none"
+        >Registrar nuevo colaborador</a
+      >
+    </div>
+  </div>
+  <br />
+  <div
+    class="alert alert-warning alert-dismissible fade show"
+    *ngIf="alert_warning"
+    role="alert"
+  >
+    Colaborador <strong>eliminado</strong>
+  </div>
+  <br />
+  <div class="table-responsive text-center">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre completo</th>
+          <th>Empresa</th>
+          <th>Área</th>
+          <th>Departamento</th>
+          <th>Puesto</th>
+          <th>Fecha de alta</th>
+          <th>Estatus</th>
+          <th width="220px">Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let colaborador of colaboradores">
+          <td>{{ colaborador.id }}</td>
+          <td>
+            {{ colaborador.name }} {{ colaborador.lastNameP }}
+            {{ colaborador.lastNameM }}
+          </td>
+          <td>{{ colaborador.company }}</td>
+          <td>{{ colaborador.area }}</td>
+          <td>{{ colaborador.department }}</td>
+          <td>{{ colaborador.position }}</td>
+          <td>{{ colaborador.dischargeDate }}</td>
+          <td>{{ colaborador.status }}</td>
+          <td>
+            <a
+              href="#"
+              [routerLink]="['/colaboradores/', 'editar', colaborador.id]"
+              class="btn btn-primary mb-2"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Editar"
+              ><i class="fa fa-pencil-square-o" aria-hidden="true"></i
+            ></a>
+            <button
+              type="button"
+              (click)="deleteColaborador(colaborador.id)"
+              class="btn btn-danger ms-1 mb-md-2"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Eliminar"
+            >
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
