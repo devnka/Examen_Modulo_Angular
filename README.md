@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
+## Paquetes
+<ul>
+  <li>npm install font-awesome --save</li>
+  <li>npm install bootstrap</li>
+</ul>
+
+## Importar font-awesome en angular.json
+"styles": [
+  "node_modules/font-awesome/css/font-awesome.css",
+  "src/styles.css"
+],
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
